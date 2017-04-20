@@ -29,6 +29,7 @@ ratings_joined_all = FOREACH (JOIN movie_ratings_avg BY movieId, movie_titles BY
 ratings_joined = FOREACH ratings_joined_all GENERATE
 movie_titles::movieId AS movieId,
 movie_titles::title AS title,
+movie_titles::genres AS genre,
 movie_ratings_avg::avgRating AS avgRating,
 movie_ratings_avg::numRatings AS numRatings;
 
